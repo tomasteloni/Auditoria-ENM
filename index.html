@@ -7,19 +7,19 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     :root {
-      --bg:      #faf8f5;
+      --bg:      #ffffff;
       --white:   #ffffff;
       --card:    #ffffff;
-      --card2:   #fef8f8;
-      --border:  #e8dcd5;
-      --muted:   #b09888;
-      --subtle:  #a89880;
-      --text:    #2a1f18;
+      --card2:   #f9f7f5;
+      --border:  #e5dcd2;
+      --muted:   #808080;
+      --subtle:  #999999;
+      --text:    #000000;
       --accent:  #c97a8a;
       --accent2: #8a4d59;
       --green:   #6baf8a;
-      --yellow:  #d4b59f;
-      --red:     #d45555;
+      --yellow:  #d4a574;
+      --red:     #c85555;
       --blue:    #5b9bd5;
       --instagram: #E1306C;
       --facebook:  #1877F2;
@@ -37,13 +37,13 @@
     /* ── HEADER ── */
     .header {
       background: var(--white);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--accent);
       padding: 28px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(201,122,138,0.08);
     }
     .header-left { display: flex; align-items: center; gap: 18px; }
     .logo-box {
@@ -54,6 +54,7 @@
       font-size: 18px; font-weight: bold;
       color: white; letter-spacing: 1px; flex-shrink: 0;
       border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(201,122,138,0.3);
     }
     .brand-name {
       font-family: 'Georgia', serif;
@@ -89,10 +90,10 @@
     .nav {
       position: sticky; top: 0; z-index: 100;
       background: var(--white);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid #f0f0f0;
       padding: 0 48px;
       display: flex; gap: 0; overflow-x: auto;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
     }
     .nav-tab {
       padding: 14px 20px;
@@ -127,10 +128,10 @@
     /* ── CARDS ── */
     .card {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid #e5e5e5;
       padding: 24px;
-      border-radius: 6px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     .card-sm { padding: 18px 20px; }
     .card-label {
@@ -157,10 +158,10 @@
     /* ── CHART CONTAINERS ── */
     .chart-wrap {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid #e5e5e5;
       padding: 24px;
-      border-radius: 6px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .chart-title {
       font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
@@ -171,9 +172,10 @@
     /* ── TABLES ── */
     .table-wrap {
       background: var(--card);
-      border: 1px solid var(--border);
+      border: 1px solid #e5e5e5;
       overflow-x: auto;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .table-head {
       padding: 16px 20px;
@@ -183,26 +185,26 @@
     }
     table { width: 100%; border-collapse: collapse; }
     th {
-      padding: 10px 16px; text-align: left;
+      padding: 12px 16px; text-align: left;
       font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
-      color: var(--subtle); border-bottom: 1px solid var(--border);
-      white-space: nowrap; font-weight: 600;
+      color: #666666; border-bottom: 1px solid #e5e5e5;
+      white-space: nowrap; font-weight: 600; background: #fafafa;
     }
     td {
-      padding: 10px 16px; font-size: 12px;
-      border-bottom: 1px solid var(--border); color: var(--text);
+      padding: 12px 16px; font-size: 12px;
+      border-bottom: 1px solid #f0f0f0; color: var(--text);
     }
     tr:last-child td { border-bottom: none; }
-    tr:hover td { background: var(--card2); }
+    tr:hover td { background: #fafafa; }
     .badge {
       display: inline-flex; align-items: center; gap: 5px;
       padding: 4px 10px; font-size: 10px; letter-spacing: 0.5px;
       border-radius: 3px; font-weight: 500;
     }
-    .badge-green  { background: rgba(107,175,138,.15); color: var(--green); border: 1px solid rgba(107,175,138,.3); }
-    .badge-yellow { background: rgba(212,181,159,.12); color: var(--yellow); border: 1px solid rgba(212,181,159,.3); }
-    .badge-red    { background: rgba(212,85,85,.15);  color: var(--red);    border: 1px solid rgba(212,85,85,.3); }
-    .badge-muted  { background: rgba(168,152,128,.1); color: var(--subtle); border: 1px solid rgba(168,152,128,.2); }
+    .badge-green  { background: rgba(107,175,138,.12); color: #2d6b4a; border: 1px solid rgba(107,175,138,.25); }
+    .badge-yellow { background: rgba(212,165,116,.12); color: #8b6f3d; border: 1px solid rgba(212,165,116,.25); }
+    .badge-red    { background: rgba(200,85,85,.12);  color: #993333;  border: 1px solid rgba(200,85,85,.25); }
+    .badge-muted  { background: rgba(180,180,180,.08); color: #666666; border: 1px solid rgba(180,180,180,.2); }
 
     /* ── INSIGHT CARDS ── */
     .insights-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
@@ -215,9 +217,9 @@
       border-bottom: 1px solid var(--border);
       border-radius: 6px 6px 0 0;
     }
-    .insight-header.green  { background: rgba(107,175,138,.08); color: var(--green); }
-    .insight-header.yellow { background: rgba(212,181,159,.07); color: var(--yellow); }
-    .insight-header.red    { background: rgba(212,85,85,.08);  color: var(--red); }
+    .insight-header.green  { background: rgba(107,175,138,.08); color: #2d6b4a; }
+    .insight-header.yellow { background: rgba(212,165,116,.07); color: #8b6f3d; }
+    .insight-header.red    { background: rgba(200,85,85,.08);  color: #993333; }
     .insight-list {
       background: var(--card); border: 1px solid var(--border);
       border-top: none; list-style: none; border-radius: 0 0 6px 6px;
@@ -257,14 +259,14 @@
       font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
       font-weight: 600; margin-bottom: 4px;
     }
-    .matrix-q1 { background: rgba(107,175,138,.05); }
-    .matrix-q1 .matrix-label { color: var(--green); }
-    .matrix-q2 { background: rgba(91,155,213,.05); }
-    .matrix-q2 .matrix-label { color: var(--blue); }
-    .matrix-q3 { background: rgba(168,152,128,.04); }
-    .matrix-q3 .matrix-label { color: var(--subtle); }
-    .matrix-q4 { background: rgba(168,152,128,.03); }
-    .matrix-q4 .matrix-label { color: var(--muted); }
+    .matrix-q1 { background: rgba(107,175,138,.04); }
+    .matrix-q1 .matrix-label { color: #2d6b4a; }
+    .matrix-q2 { background: rgba(201,122,138,.04); }
+    .matrix-q2 .matrix-label { color: var(--accent); }
+    .matrix-q3 { background: rgba(212,165,116,.04); }
+    .matrix-q3 .matrix-label { color: #8b6f3d; }
+    .matrix-q4 { background: rgba(200,200,200,.03); }
+    .matrix-q4 .matrix-label { color: #808080; }
     .matrix-tag {
       display: inline-block; padding: 4px 10px;
       font-size: 11px; border: 1px solid var(--border); color: var(--text);
@@ -290,21 +292,21 @@
       font-size: 10px; font-family: 'Georgia', serif; font-weight: 600;
       border-radius: 3px;
     }
-    .phase-q1 .roadmap-phase-title { color: var(--green); }
-    .phase-q1 .roadmap-num { background: rgba(107,175,138,.2); color: var(--green); }
-    .phase-q2 .roadmap-phase-title { color: var(--yellow); }
-    .phase-q2 .roadmap-num { background: rgba(212,181,159,.15); color: var(--yellow); }
-    .phase-q3 .roadmap-phase-title { color: var(--blue); }
-    .phase-q3 .roadmap-num { background: rgba(91,155,213,.15); color: var(--blue); }
+    .phase-q1 .roadmap-phase-title { color: #2d6b4a; }
+    .phase-q1 .roadmap-num { background: rgba(107,175,138,.15); color: #2d6b4a; }
+    .phase-q2 .roadmap-phase-title { color: var(--accent); }
+    .phase-q2 .roadmap-num { background: rgba(201,122,138,.15); color: var(--accent); }
+    .phase-q3 .roadmap-phase-title { color: #8b6f3d; }
+    .phase-q3 .roadmap-num { background: rgba(212,165,116,.15); color: #8b6f3d; }
 
     /* ── FOOTER ── */
     .footer {
       padding: 24px 48px;
       background: var(--white);
-      border-top: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
       text-align: center;
       font-size: 10px;
-      color: var(--subtle);
+      color: #666666;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
